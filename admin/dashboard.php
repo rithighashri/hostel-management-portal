@@ -45,6 +45,7 @@ $pending_students = $stmt->fetchAll(PDO::FETCH_ASSOC);
         .nav-links span { color: white; margin-right: 15px; }
         .nav-links a { color: white; text-decoration: none; margin-left: 15px; padding: 8px 16px; border-radius: 4px; }
         .nav-links a:hover { background: #34495e; }
+        
         .dashboard { padding: 30px 0; }
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
         .stat-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
@@ -70,6 +71,7 @@ $pending_students = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="nav-links">
                 <span>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></span>
                 <a href="students.php">All Students</a>
+                <a href="add_student.php">Add Student</a>    <!-- NEW LINE ADDED HERE -->
                 <a href="rooms.php">Rooms</a>
                 <a href="allocations.php">Allocations</a>
                 <a href="../logout.php">Logout</a>
@@ -139,3 +141,5 @@ $pending_students = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </body>
 </html>
+```
+
