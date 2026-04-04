@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 session_start();
 require_once '../config/database.php';
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'hostel_manager') {
     header('Location: ../login.php');
     exit;
 }

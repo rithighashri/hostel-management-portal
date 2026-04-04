@@ -29,7 +29,7 @@ try {
     echo "   - Users table accessible ✅<br>";
     echo "   - Total users in database: " . $result['count'] . "<br>";
     
-    $stmt = $pdo->query("SELECT * FROM users WHERE role='admin' LIMIT 1");
+    $stmt = $pdo->query("SELECT * FROM users WHERE role='hostel_manager' LIMIT 1");
     $admin = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if ($admin) {

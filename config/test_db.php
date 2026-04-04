@@ -24,7 +24,7 @@ try {
     }
     
     // Check admin user
-    $stmt = $pdo->query("SELECT * FROM users WHERE role = 'admin'");
+    $stmt = $pdo->query("SELECT * FROM users WHERE role = 'hostel_manager'");
     if ($stmt->rowCount() > 0) {
         echo "<br>✅ Admin user exists!<br>";
     } else {

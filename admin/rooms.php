@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 session_start();
 require_once '../config/database.php';
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'hostel_manager') {
     header('Location: ../login.php');
     exit;
 }
@@ -137,13 +137,14 @@ $total_occupied = array_sum(array_column($rooms, 'occupied'));
         <div class="container">
             <h1>🏠 Rooms Management</h1>
             <div class="nav-links">
-                <span>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></span>
-                <a href="dashboard.php">Dashboard</a>
-                <a href="students.php">Students</a>
-                <a href="add_student.php">Add Student</a>
-                <a href="allocations.php">Allocations</a>
-                <a href="../logout.php">Logout</a>
-            </div>
+    <span>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></span>
+    <a href="dashboard.php">Dashboard</a>
+    <a href="students.php">Students</a>
+    
+    <a href="rooms.php">Rooms</a>
+    <a href="allocations.php">Allocations</a>
+    <a href="../logout.php">Logout</a>
+</div>
         </div>
     </nav>
     
@@ -230,7 +231,7 @@ $total_occupied = array_sum(array_column($rooms, 'occupied'));
                                 <th>Available</th>
                                 <th>Gender</th>
                                 <th>Status</th>
-                                <th>Actions</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -247,15 +248,7 @@ $total_occupied = array_sum(array_column($rooms, 'occupied'));
                                             <?php echo ucfirst($room['status']); ?>
                                         </span>
                                     </td>
-                                    <td>
-                                        <a href="edit_room.php?id=<?php echo $room['id']; ?>" 
-                                           class="btn-action btn-edit"
-                                           title="Edit Room">✏️ Edit</a>
-                                        <a href="rooms.php?delete=<?php echo $room['id']; ?>" 
-                                           class="btn-action btn-delete"
-                                           title="Delete Room"
-                                           onclick="return confirm('⚠️ Are you sure you want to delete Room <?php echo $room['room_number']; ?>?\n\nNote: Rooms with active allocations cannot be deleted.')">🗑️ Delete</a>
-                                    </td>
+                                    
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

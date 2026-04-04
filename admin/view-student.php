@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 session_start();
 require_once '../config/database.php';
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'admin') {
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 'hostel_manager') {
     header('Location: ../login.php');
     exit;
 }
@@ -92,12 +92,14 @@ $allocation = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="container">
             <h1>Student Profile</h1>
             <div class="nav-links">
-                <span>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></span>
-                <a href="dashboard.php">Dashboard</a>
-                <a href="students.php">All Students</a>
-                <a href="add_student.php">Add Student</a>
-                <a href="../logout.php">Logout</a>
-            </div>
+    <span>Welcome, <?php echo htmlspecialchars($_SESSION['name']); ?></span>
+    <a href="dashboard.php">Dashboard</a>
+    <a href="students.php">Students</a>
+  
+    <a href="rooms.php">Rooms</a>
+    <a href="allocations.php">Allocations</a>
+    <a href="../logout.php">Logout</a>
+</div>
         </div>
     </nav>
     

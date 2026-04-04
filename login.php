@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['role'] = $user['role'];
-                if ($user['role'] == 'admin') {
+                if ($user['role'] == 'hostel_manager') {
                     header('Location: admin/dashboard.php');
                 } else {
                     header('Location: student/dashboard.php');

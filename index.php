@@ -12,13 +12,13 @@
             <h1>Hostel Management System</h1>
             <div class="nav-links">
                 <a href="login.php">Login</a>
-                <a href="register.php">Register</a>
+                
             </div>
         </div>
     </nav>
         <div class="hero">
       <div class="container">
-            <h2>Welcome to Our Hostel</h2>
+            <h2>Welcome to BIT Hostel</h2>
             <p>Experience comfortable living with world-class facilities and seamless room allocation</p>
         </div>
     </div>
