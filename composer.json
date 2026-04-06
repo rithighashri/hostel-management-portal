@@ -1,0 +1,8 @@
+{
+  "name": "rithighashri/hostel-room-allocation-portal",
+  "description": "Hostel Room Allocation Portal",
+  "type": "project",
+  "require": {
+    "php": "^8.1"
+  }
+}
